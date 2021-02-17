@@ -1,0 +1,17 @@
+import sys
+from re import findall as fa
+
+pattern = sys.argv[1]
+if len(sys.argv) > 2:
+  limit = int(sys.argv[2])
+else:
+  limit = 1
+
+with open('words.txt') as f:
+  txt = f.read()
+  #raw_pattern = "%r"%pattern
+  #print raw_pattern
+  result = fa(pattern,txt)
+
+for i in range( min(limit, len(result)) ):
+  print result[i]

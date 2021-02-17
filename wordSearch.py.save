@@ -1,0 +1,6 @@
+import sys
+
+letters = [i for i in sys.argv[1]]
+
+with open('words.txt') as f:
+  words = f.readlines()
